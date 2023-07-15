@@ -17,8 +17,15 @@ public class Student {
         this.id = id;
         this.name = name;
         this.image = image;
-//        this.attendanceId = attendanceId;
-//        this.status = status;
+
+    }
+
+    public Student(String id, String name, Blob image, int attendanceId, Status status) {
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.attendanceId = attendanceId;
+        this.status = status;
     }
 
     public Student() {

@@ -35,7 +35,7 @@
                                         <Label prefHeight="16.0" prefWidth="80.0" />
                                         <ImageView fx:id="imgPro" fitHeight="150.0" fitWidth="163.0" pickOnBounds="true">
                                  <image>
-                                    <Image url="@../Images/man-dummy.jpg" />
+                                    <Image url="@../image/man-dummy.jpg" />
                                  </image></ImageView>
                                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                                             <children>

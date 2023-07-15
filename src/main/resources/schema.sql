@@ -4,7 +4,7 @@ create table if not exists student(
 );
 create table if not exists picture(
                                       student_id varchar(20) primary key ,
-                                      picure MEDIUMBLOB not null ,
+                                      picture MEDIUMBLOB not null ,
                                       constraint fk_picture foreign key (student_id) references student(id)
 );
 create table if not exists attendence(
