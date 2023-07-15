@@ -5,13 +5,15 @@ import javafx.scene.image.ImageView;
 
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Student {
     private String id;
     private String name;
     private Blob image;
-    private int attendanceId;
-    private Status status;
+    private LocalDateTime dateTime;
+    private Gender gender;
 
     public Student(String id, String name, Blob image) {
         this.id = id;
@@ -20,12 +22,12 @@ public class Student {
 
     }
 
-    public Student(String id, String name, Blob image, int attendanceId, Status status) {
+    public Student(String id, String name, Blob image, LocalDateTime dataTime, Gender gender) {
         this.id = id;
         this.name = name;
         this.image = image;
-        this.attendanceId = attendanceId;
-        this.status = status;
+        this.dateTime = dataTime;
+        this.gender = gender;
     }
 
     public Student() {
@@ -55,20 +57,20 @@ public class Student {
         this.image = image;
     }
 
-    public int getAttendanceId() {
-        return attendanceId;
+    public LocalDateTime getDateTime() {
+        return this.dateTime ;
     }
 
-    public void setAttendanceId(int attendanceId) {
-        this.attendanceId = attendanceId;
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     }
 
-    public Status getStatus() {
-        return status;
+    public Gender getStatus() {
+        return gender;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setStatus(Gender status) {
+        this.gender = status;
     }
     public ImageView getImageView(){
         try {
