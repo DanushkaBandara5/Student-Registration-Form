@@ -1,4 +1,4 @@
-package lk.ijse.dep10.Controller;
+package lk.ijse.dep10.app.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -51,7 +51,7 @@ public class MainSceneController {
     }
 
     @FXML
-    void btnDleteOnAction(ActionEvent event) {
+    void btnDeleteOnAction(ActionEvent event) {
 
     }
 

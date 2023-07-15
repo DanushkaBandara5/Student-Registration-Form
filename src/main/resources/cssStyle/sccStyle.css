@@ -1,0 +1,14 @@
+.split-pane{
+    /*-fx-background-image: url('../Images/istockphoto-1174777260-170667a.jpg');*/
+    background-color: aqua;
+}
+.button:hover{
+    -fx-background-color: lightblue;
+ }
+#Btnclear,#btnDelete{
+    /*-fx-background-color: purple;*/
+}
+.button{
+    -fx-font-size: 13;
+    -fx-font-family: Inter;
+}
