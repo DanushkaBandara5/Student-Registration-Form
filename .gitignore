@@ -1,0 +1,7 @@
+**/*.iml
+**/.vscode
+**/.idea
+**/build
+**/out
+**/target
+**/.idea
