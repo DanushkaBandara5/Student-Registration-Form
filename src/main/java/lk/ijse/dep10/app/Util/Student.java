@@ -83,4 +83,7 @@ public class Student {
             throw new RuntimeException(e);
         }
     }
+    public String getAttendence() {
+        return DateTimeFormatter.ofPattern("yyyy:MM:dd HH:mm:ss").format(dateTime);
+    }
 }

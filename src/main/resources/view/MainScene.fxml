@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="486.0" prefWidth="803.0" stylesheets="@../cssStyle/sccStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controller.MainSceneController">
+<AnchorPane fx:id="root" minHeight="600.0" minWidth="1200.0" prefHeight="486.0" prefWidth="803.0" stylesheets="@../cssStyle/sccStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controller.MainSceneController">
     <children>
-        <SplitPane dividerPositions="0.5" layoutX="476.0" layoutY="156.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <SplitPane dividerPositions="0.35" layoutX="476.0" layoutY="156.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="426.0">
                     <children>
@@ -25,15 +25,15 @@
                                 <HBox prefHeight="24.0" prefWidth="360.0">
                                     <children>
                                         <Button fx:id="btnNew" mnemonicParsing="false" onAction="#btnNewOnAction" text="NEW STUDENT +" />
-                              <Label prefHeight="16.0" prefWidth="93.0" />
-                              <Label fx:id="lblTime" layoutX="140.0" layoutY="10.0" prefHeight="16.0" prefWidth="145.0" text="Time:" />
+                              <Label alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="95.0" />
+                              <Label fx:id="lblTime" alignment="CENTER_RIGHT" layoutX="140.0" layoutY="10.0" prefHeight="16.0" prefWidth="133.0" text="Time:" />
                                     </children>
                                 </HBox>
-                                <Label text="STUDENT ID" />
+                                <Label text="STUDENT ID" textFill="#1900e3" />
                                 <TextField fx:id="txtId" alignment="CENTER" maxWidth="300.0" prefWidth="300.0" />
-                                <Label layoutX="10.0" layoutY="10.0" text="STUDENT NAME" />
+                                <Label layoutX="10.0" layoutY="10.0" text="STUDENT NAME" textFill="#1900e3" />
                                 <TextField fx:id="txtName" alignment="CENTER" layoutX="10.0" layoutY="26.0" maxWidth="300.0" />
-                        <Label layoutX="146.0" layoutY="110.0" text="GENDER" />
+                        <Label layoutX="146.0" layoutY="110.0" text="GENDER" textFill="#1900e3" />
                         <HBox alignment="CENTER" prefHeight="29.0" prefWidth="376.0" spacing="10.0">
                            <children>
                               <RadioButton fx:id="rdoMale" mnemonicParsing="false" text="Male">
@@ -41,10 +41,10 @@
                                     <ToggleGroup fx:id="toggleGroup" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="radoFemale" layoutX="128.0" layoutY="14.0" mnemonicParsing="false" text="Female" toggleGroup="$toggleGroup" />
+                              <RadioButton fx:id="radoFemale" layoutX="128.0" layoutY="14.0" mnemonicParsing="false" text="Female" textFill="#0a0a04" toggleGroup="$toggleGroup" />
                            </children>
                         </HBox>
-                                <Label layoutX="97.0" layoutY="74.0" text="PROFILE PICTURE" />
+                                <Label layoutX="97.0" layoutY="74.0" text="PROFILE PICTURE" textFill="#1900e3" />
                                 <HBox alignment="CENTER" prefHeight="159.0" prefWidth="278.0" spacing="10.0">
                                     <children>
                                         <Label prefHeight="16.0" prefWidth="80.0" />
@@ -54,16 +54,16 @@
                                  </image></ImageView>
                                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                                             <children>
-                                                <Button fx:id="btnBrowse" mnemonicParsing="false" onAction="#btnBrowseOnAction" prefWidth="75.0" text="Browse" />
-                                                <Button fx:id="btnClear" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefWidth="75.0" text="Clear" />
+                                                <Button fx:id="btnBrowse" mnemonicParsing="false" onAction="#btnBrowseOnAction" prefWidth="75.0" text="Browse" textFill="#141414" />
+                                                <Button fx:id="btnClear" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefWidth="75.0" text="Clear" textFill="#1b1a1a" />
                                             </children>
                                         </VBox>
                                     </children>
                                 </HBox>
                                 <HBox alignment="CENTER" prefHeight="48.0" prefWidth="200.0" spacing="10.0">
                                     <children>
-                                        <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSavaOnAction" prefWidth="75.0" text="SAVE" />
-                                        <Button fx:id="btnDelete" layoutX="10.0" layoutY="10.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefWidth="75.0" text="DELETE" />
+                                        <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSavaOnAction" prefWidth="75.0" text="SAVE" textFill="#141414" />
+                                        <Button fx:id="btnDelete" layoutX="10.0" layoutY="10.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefWidth="75.0" text="DELETE" textFill="#171717" />
                                     </children>
                                 </HBox>
                             </children>
@@ -75,13 +75,16 @@
                         <VBox layoutX="10.0" layoutY="37.0" prefHeight="451.0" prefWidth="376.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="37.0">
                             <children>
                                 <TextField fx:id="txtSearch" promptText="Search" />
-                                <TableView fx:id="tblStudent" maxWidth="500.0" onKeyReleased="#tblStudentOnKeyReleased" prefHeight="403.0" prefWidth="321.0">
+                                <TableView fx:id="tblStudent" onKeyReleased="#tblStudentOnKeyReleased" VBox.vgrow="ALWAYS">
                                     <columns>
                                         <TableColumn prefWidth="83.0" text="PICTURE" />
                                         <TableColumn prefWidth="65.0" text="ID" />
-                                        <TableColumn minWidth="0.0" prefWidth="123.0" text="NAME" />
-                              <TableColumn minWidth="0.0" prefWidth="104.0" text="ENTRANCE" />
+                                        <TableColumn minWidth="0.0" prefWidth="109.0" text="NAME" />
+                              <TableColumn minWidth="0.0" prefWidth="118.0" text="REGISTRATION" />
                                     </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                                 </TableView>
                             </children>
                         </VBox>

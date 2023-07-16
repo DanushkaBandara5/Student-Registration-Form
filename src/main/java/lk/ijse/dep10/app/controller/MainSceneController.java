@@ -91,7 +91,7 @@ public class MainSceneController {
         tblStudent.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("id"));
         tblStudent.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("imageView"));
         tblStudent.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("name"));
-        tblStudent.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("dateTime"));
+        tblStudent.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("attendence"));
 
         tblStudent.getSelectionModel().selectedItemProperty().addListener((value, previous, current) -> {
             btnDelete.setDisable(current == null);
@@ -220,7 +220,6 @@ public class MainSceneController {
             String id = txtId.getText();
             String name = txtName.getText();
             Image image = imgPro.getImage();
-            System.out.println(image.getUrl());
             Image imageDefault = new Image("/image/man-dummy.jpg");
             LocalDateTime dataTime = LocalDateTime.now();
             Gender gender = rdoMale.isSelected() ? Gender.valueOf("MALE") : Gender.valueOf("FEMALE");
@@ -243,7 +242,24 @@ public class MainSceneController {
                     preStmStd.setString(2, gender.name());
                     preStmStd.setString(3, id);
                     preStmStd.execute();
-                    //TODO setup image changing
+                    Statement statement = connection.createStatement();
+                    ResultSet resultSet = statement.executeQuery(String.format("select * from picture where student_id='%s'", id));
+                    if(resultSet.next() || !image.getUrl().equals(imageDefault.getUrl())){
+                        Statement statement1 = connection.createStatement();
+                        ResultSet resultSet1 = statement.executeQuery(String.format("select * from picture where student_id='%s'", id));
+                        if(resultSet1.next()){
+                            PreparedStatement preStm = connection.prepareStatement("update picture set picture=? where student_id =?");
+                            preStm.setBlob(1,pic);
+                            preStm.setString(2,id);
+                            preStm.executeUpdate();
+                        }else{
+                            PreparedStatement preStm = connection.prepareStatement("insert into picture (student_id,picture) values(?,?)");
+                            preStm.setBlob(2,pic);
+                            preStm.setString(1,id);
+                            preStm.executeUpdate();
+                        }
+                    }
+
                     connection.commit();
 
                     loadData();
